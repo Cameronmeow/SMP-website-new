@@ -71,7 +71,7 @@ function Date() {
                     </tr>
                   </tbody>
                 </table>
-                <p className="section-sub-heading">Sources</p>
+                <h3 className="pt-4">Sources</h3>
                 <ul className="section-ul-list">
                   <li>
                     <a className="link" href="https://jeeadv.ac.in/">
