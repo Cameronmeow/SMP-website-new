@@ -1,0 +1,57 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  
+}
+.aboutContainer {
+  /* background: #fff; */
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: rgba(0, 12, 241, 0.2); 
+  backdrop-filter:blur(20px);
+  width: 100%;
+}
+.aboutPicture {
+  background-size: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.aboutHeading {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.aboutContent {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  background-color: rgba(252, 252, 252, 0.3); 
+  backdrop-filter:blur(10px);
+  border-radius: 10px;
+  font-size: 1em;
+  color: #323232;
+}
+.aboutText{
+  padding: 5px 5px 15px 15px;
+}
+.aboutText a {
+  color: #007BFF;
+  text-decoration: none;
+}
+.aboutText a:hover {
+  text-decoration: underline;
+}
+.signature {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.ytvideo{
+  width: 700px;
+  margin: 20px;
+  border-radius: 10px;
+}
