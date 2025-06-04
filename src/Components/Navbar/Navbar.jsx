@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css"; // Make sure to style your navbar as needed
-import logo from "./logo_blue-removebg-preview.svg";
-import { Link, Navigate } from "react-router-dom";
+import logo from "./logo.svg";
+
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(null);
+  const [showNavbar, setShowNavbar] = useState(false);
 
-  
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY; // Get the vertical scroll position
+      if (scrollPosition > 100) {
+        setShowNavbar(true); // Show navbar when scrolled down more than 100px
+      } else {
+        setShowNavbar(false); // Hide navbar when at the top
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleMouseEnter = (item) => {
     setDropdown(item);
   };
@@ -15,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbarsmp">
+    <div className={`navbarsmp ${showNavbar ? "visible" : "hidden"}`}>
       <div>
         <img
           src={logo}
@@ -25,7 +42,6 @@ const Navbar = () => {
         />
       </div>
       <div className="navContainer">
-        
         <div
           className="navItem"
           onMouseEnter={() => handleMouseEnter("About Us")}
@@ -33,16 +49,30 @@ const Navbar = () => {
           About Us
           {dropdown === "About Us" && (
             <div className="dropdownMenu" onMouseLeave={handleMouseLeave}>
-              
-            <a href ="/about" style={{textDecoration:"none" , color:"white"}}><div className="dropdownItem">Our Objective</div></a>
+                <a
+                  href="/about"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+              <div className="dropdownItem">
+                  Our Objective
+              </div>
+                </a>
               <div className="dropdownItem">Mentorship</div>
-              <div className="dropdownItem">ISMP</div>
+              <div className="dropdownItem">
+                <a
+                  href="/ismp"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  ISMP
+                </a>
+              </div>
               <div className="dropdownItem">English Learning Program</div>
               <div className="dropdownItem">CAT</div>
               <div className="dropdownItem">Team</div>
             </div>
           )}
         </div>
+
         <div
           className="navItem"
           onMouseEnter={() => handleMouseEnter("Academics")}
@@ -105,20 +135,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
-
-
-
-
-
-
-
-
-
-
-        
       </div>
-
-      
     </div>
   );
 };

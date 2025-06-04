@@ -3,7 +3,8 @@
     height: 90%;
     padding: 0;
     margin: 0;
-    background-color: #FFC107;
+    background-color: #142479;
+    color: white;
 }
 .footerContainer{
     padding: 0;
@@ -12,12 +13,18 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    
+}
+
+.footerItems > li > a {
+    color: #E1F7F5;
 }
 .footer-section{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    color: white;
    
     width: 100%;
 }

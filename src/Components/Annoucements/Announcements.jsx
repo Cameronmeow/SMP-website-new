@@ -6,7 +6,7 @@ import { faExclamation , faXmark} from '@fortawesome/free-solid-svg-icons';
 
 const Announcements = () => {
 
-  const [openAnnouncements,setOpenAnnouncements] = useState(true);
+  const [openAnnouncements,setOpenAnnouncements] = useState(false);
   return (
     <>
     <div className='announcements' onClick={() => setOpenAnnouncements(!openAnnouncements)}> 

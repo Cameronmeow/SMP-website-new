@@ -1,13 +1,29 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
 .navbarsmp {
   height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFC107;
+  background-color: #142749;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.navbarsmp.hidden {
+  opacity: 1;
+  pointer-events: auto; /* Ensures it doesn’t interfere when hidden */
+}
+
+.navbarsmp.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .navContainer {
@@ -15,38 +31,39 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding:0px;
+  padding: 0px;
 }
 
 .navItem {
   font-weight: 500;
-  padding: 10px 20px; /* Adjusted padding for better spacing */
+  color: #e1f7f5;
+  padding: 10px 20px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
-  position: relative; /* Added for dropdown positioning */
+  position: relative;
 }
 
 .navItem:hover {
-  background-color: #142749;
-  color: white;
+  background-color: #e1f7f5;
+  color: #142749;
 }
 
 .dropdownMenu {
   position: absolute;
-  top: 70px; /* Adjusted to align with the navbar height */
+  top: 70px;
   left: 0;
-  background-color: rgba(0, 13, 255, 0.10); 
-  backdrop-filter:blur(20px);
+  background-color: rgba(225, 247, 245, 0.2);
+  backdrop-filter: blur(20px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   width: fit-content;
   display: flex;
   flex-direction: column;
-  color: white;
-  border-radius: 10px; /* Added for rounded corners */
+  color: black;
+  border-radius: 10px;
 }
 
 .dropdownItem {
@@ -56,7 +73,7 @@
 }
 
 .dropdownItem:hover {
-  background-color: #142749;
+  background-color: #e1f7f5;
 }
 
 

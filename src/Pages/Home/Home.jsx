@@ -1,3 +1,4 @@
+
 import Navbar from "../../Components/Navbar/Navbar";
 import React from "react";
 import Header from "../../Components/Header/Header";
@@ -19,5 +20,3 @@ function Home() {
   );
 }
 export default Home;
-
-// import "./navbar.css"; // Make sure to style your navbar as needed
